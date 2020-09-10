@@ -14,7 +14,8 @@ module.exports.addTrades = async(req, res) => {
       //check for is this first trade for stock
       let isUserExist = await Trade.findOne({
         $and: [
-        { active: true },  
+        { active: true },
+        { symbol: symbol },
         { username: username }
         ]
       });
